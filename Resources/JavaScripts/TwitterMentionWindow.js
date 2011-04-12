@@ -19,7 +19,7 @@ function updateTimeline (timeline) {
 
 	var imageView = Ti.UI.createImageView(
 					      {
-						  image: tweet.user.profile_image_url,
+						  image: tweet.profile_image_url,
 						  width: 48,
 						  height: 48,
 						  top: 5,
@@ -39,7 +39,7 @@ function updateTimeline (timeline) {
 					      color: '#2b4771'
 					  }
 					  );
-        nameLabel.text = tweet.user.screen_name;
+        nameLabel.text = tweet.from_user;
         row.add(nameLabel);
 
         var commentLabel = Ti.UI.createLabel(
@@ -73,12 +73,12 @@ function updateTimeline (timeline) {
 
 var xhr = Ti.Network.createHTTPClient();
 var user = 'tsuda';
-var url = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=" + user;
+url = "http://search.twitter.com/search.json?q=@" + user;
 
 xhr.open('GET', url);
 xhr.onload = function() {
     var timeline = JSON.parse(this.responseText);
-    updateTimeline(timeline);
+    updateTimeline(timeline.results);
 };
 xhr.send();
 

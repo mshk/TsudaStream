@@ -25,14 +25,29 @@ var tab1 = Titanium.UI.createTab({
 // create controls tab and root window
 //
 var win2 = Titanium.UI.createWindow({  
+    title:'@',
+    url: 'JavaScripts/TwitterMentionWindow.js',
+    backgroundColor:'#fff'
+});
+
+var tab2 = Titanium.UI.createTab({  
+    icon:'KS_nav_ui.png',
+    title:'@',
+    window:win2
+});
+
+//
+// create controls tab and root window
+//
+var win3 = Titanium.UI.createWindow({  
     title:'flickr',
     url: 'JavaScripts/FlickrWindow.js',
     backgroundColor:'#fff'
 });
-var tab2 = Titanium.UI.createTab({  
+var tab3 = Titanium.UI.createTab({  
     icon:'KS_nav_ui.png',
     title:'flickr',
-    window:win2
+    window:win3
 });
 
 
@@ -41,6 +56,7 @@ var tab2 = Titanium.UI.createTab({
 //
 tabGroup.addTab(tab1);  
 tabGroup.addTab(tab2);  
+tabGroup.addTab(tab3);  
 
 
 // open tab group
