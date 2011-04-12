@@ -1,0 +1,9 @@
+tmp
+.DS_Store
+.project
+.settings
+api.jsca 
+build/iphone/*
+build/android/*
+*~
+
